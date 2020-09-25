@@ -105,14 +105,134 @@ class _HomeState extends State<Home> {
                   fontSize: 28,
                 ),
               ),
-               Text(
+              Text(
                 'Custom Tensorflow CNN',
                 style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w800,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
                   fontSize: 28,
                 ),
               ),
+              SizedBox(
+                height: 40,
+              ),
+              Container(
+                padding: EdgeInsets.all(30),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                    )
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      child: Center(
+                        child: _loading
+                            ? Container(
+                                width: 300,
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/flower.png',
+                                    ),
+                                    SizedBox(
+                                      height: 0,
+                                    )
+                                  ],
+                                ),
+                              )
+                            : Container(
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      height: 300,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(10),
+                                        child: Image.file(_image),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    _output != null
+                                        ? Text(
+                                            'Predictions is, ${_output[0]['label']}',
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 20),
+                                          )
+                                        : Container(),
+                                    SizedBox(
+                                      height: 30,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Column(
+                        children: [
+                          GestureDetector(
+                            onTap: pickImage(),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width - 180,
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 24,
+                                vertical: 17,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Color(0xFF56ab2f),
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              child: Text(
+                                "Take a Photo",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          GestureDetector(
+                            onTap: pickImage(),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width - 180,
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 24,
+                                vertical: 17,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Color(0xFF56ab2f),
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              child: Text(
+                                "Take a Photo",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
