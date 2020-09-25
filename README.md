@@ -1,8 +1,7 @@
 ![Image](images/rover.jpg)
-#  Cat Dog Classifier using Tensorflow Flite using Flutter:boom:
+#  Flower Classifier using Tensorflow Flite using Flutter:boom:
 
-Created an Dog v/s Cat Classifer using Tensorflow in Flutter, to check the cat v/s dogs. 
-
+Created a Flower Classifier which can be used to create the model which can be used to find the difference between them 
 
 ### Show some love :heart: and star the repo to support the project
 
@@ -16,15 +15,17 @@ The Parent Repository of this project can be found on this [link](https://github
 
 ## Features Listed Below:
 
-* [✅] Used Kaggle Dataset of Cat/Dogs.
+* [✅] Used Kaggle Dataset of different flowers.
 * [✅] Tensorflow Lite had been used to do the classification.
+* [✅] Trained the data on more than 10000 images of different flowers.
+* [✅] Average Accuracy is around 92%.
 <!-- * [✅] Widgets used like ListTile, ListView Builder, Center, Text and Circle Avatar Widgets -->
 <!-- * [❌] Everything is static right now, no API integration done on it. -->
 
 
 <!-- ### Screenshots and Working GIFS: -->
 
-<img src="images/rovers.gif" height="300em"  width="250em"/> <img src="images/dog1.PNG" height="300em" width="250em"/> <img src="images/dog2.PNG" height="300em" width="250em"/><img src="images/dog3 .PNG" height="300em" width="250em"/>
+<img src="images/rovers.gif" height="300em"  width="250em"/> <img src="images/1.PNG" height="300em" width="250em"/> <img src="images/2.PNG" height="300em" width="250em"/><img src="images/3 .PNG" height="300em" width="250em"/><img src="images/2.PNG" height="300em" width="250em"/><img src="images/3 .PNG" height="300em" width="250em"/><img src="images/4.PNG" height="300em" width="250em"/><img src="images/5 .PNG" height="300em" width="250em"/>
 
 
  Sorry for the quality of the GIF :pray:
