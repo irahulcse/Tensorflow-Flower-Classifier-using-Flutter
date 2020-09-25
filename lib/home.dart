@@ -26,7 +26,7 @@ class _HomeState extends State<Home> {
   classifyImage(File image) async {
     var output = await Tflite.runModelOnImage(
       path: image.path,
-      numResults: 2,
+      numResults: 5,
       threshold: 0.5,
       imageMean: 127.5,
       imageStd: 127.5,
@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
 
   loadModel() async {
     await Tflite.loadModel(
-      model: 'assets/model_unquant.tflite',
+      model: 'assets/model.tflite',
       labels: 'assets/labels.txt',
     );
   }
@@ -142,9 +142,72 @@ class _HomeState extends State<Home> {
                                       'assets/flower.png',
                                     ),
                                     SizedBox(
-                                      height: 0,
-                                    )
+                                      height: 12,
+                                    ),
+                                    Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      child: Column(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: pickImage,
+                                            child: Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  180,
+                                              alignment: Alignment.center,
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 24,
+                                                vertical: 17,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFF56ab2f),
+                                                borderRadius:
+                                                    BorderRadius.circular(6),
+                                              ),
+                                              child: Text(
+                                                "Take a Photo",
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 4,
+                                          ),
+                                          GestureDetector(
+                                            onTap: pickGalleryImage,
+                                            child: Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  180,
+                                              alignment: Alignment.center,
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 24,
+                                                vertical: 17,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFF56ab2f),
+                                                borderRadius:
+                                                    BorderRadius.circular(6),
+                                              ),
+                                              child: Text(
+                                                "Gallery Photo's ",
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                   ],
+                                  
                                 ),
                               )
                             : Container(
@@ -169,67 +232,75 @@ class _HomeState extends State<Home> {
                                           )
                                         : Container(),
                                     SizedBox(
-                                      height: 30,
+                                      height: 4,
+                                    ),
+                                    Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      child: Column(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: pickImage,
+                                            child: Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  180,
+                                              alignment: Alignment.center,
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 24,
+                                                vertical: 17,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFF56ab2f),
+                                                borderRadius:
+                                                    BorderRadius.circular(6),
+                                              ),
+                                              child: Text(
+                                                "Take a Photo",
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 4,
+                                          ),
+                                          GestureDetector(
+                                            onTap: pickGalleryImage,
+                                            child: Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  180,
+                                              alignment: Alignment.center,
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 24,
+                                                vertical: 17,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFF56ab2f),
+                                                borderRadius:
+                                                    BorderRadius.circular(6),
+                                              ),
+                                              child: Text(
+                                                "Gallery Photo's ",
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ],
                                 ),
                               ),
                       ),
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      child: Column(
-                        children: [
-                          GestureDetector(
-                            onTap: pickImage(),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width - 180,
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 24,
-                                vertical: 17,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Color(0xFF56ab2f),
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                              child: Text(
-                                "Take a Photo",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          GestureDetector(
-                            onTap: pickImage(),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width - 180,
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 24,
-                                vertical: 17,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Color(0xFF56ab2f),
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                              child: Text(
-                                "Take a Photo",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
                   ],
                 ),
               )
