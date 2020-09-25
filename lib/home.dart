@@ -90,7 +90,31 @@ class _HomeState extends State<Home> {
           ),
         ),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 24),
+          padding: EdgeInsets.symmetric(
+            horizontal: 24,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 50),
+              Text(
+                'Detect Flowers',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 28,
+                ),
+              ),
+               Text(
+                'Custom Tensorflow CNN',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 28,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
